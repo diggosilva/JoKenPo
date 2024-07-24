@@ -8,10 +8,26 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    private let loginView = LoginView()
+    
+    override func loadView() {
+        super.loadView()
+        view = loginView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        setNavBar()
+    }
+    
+    private func setNavBar() {
+        title = "JoKenPo"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 
 }
