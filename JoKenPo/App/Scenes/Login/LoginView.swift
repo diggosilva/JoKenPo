@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LoginViewDelegate: AnyObject {
+    func textFieldDidChange()
+}
+
 class LoginView: UIView {
     lazy var logoImage: UIImageView = {
         let image = UIImageView()
@@ -27,6 +31,7 @@ class LoginView: UIView {
         tf.layer.borderColor = UIColor.lightGray.cgColor
         tf.layer.borderWidth = 1
         tf.layer.cornerRadius = 5
+        tf.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         return tf
     }()
     
@@ -35,11 +40,15 @@ class LoginView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Jogar", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .link
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.backgroundColor = .lightGray
+        button.alpha = 0.5
+        button.isEnabled = false
         return button
     }()
+    
+    weak var delegate: LoginViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -50,8 +59,16 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc private func textFieldDidChange() {
+        delegate?.textFieldDidChange()
+    }
+    
     @objc private func buttonTapped() {
-        print("DEBUG: Clicou no botão pra começar o jogo!")
+        guard let username = nameTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines), !username.isEmpty else {
+            return
+        }
+        // TODO Avançar pra próxima tela passando o nome do usuário
+        print("DEBUG: Login com o nome de usuário:", username)
     }
     
     private func setupView() {
