@@ -14,6 +14,7 @@
 		92A122902C51586A004D760F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A1228E2C51586A004D760F /* LaunchScreen.storyboard */; };
 		92D50AD22C515B97009258C7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D50AD12C515B97009258C7 /* LoginView.swift */; };
 		92D50AD52C515D6C009258C7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D50AD42C515D6C009258C7 /* Extensions.swift */; };
+		92D50AD82C5183D2009258C7 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D50AD72C5183D2009258C7 /* BoardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		92A122912C51586A004D760F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D50AD12C515B97009258C7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		92D50AD42C515D6C009258C7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		92D50AD72C5183D2009258C7 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		92D50ACF2C515B77009258C7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				92D50AD62C5183BA009258C7 /* Board */,
 				92D50AD02C515B81009258C7 /* Login */,
 			);
 			path = Scenes;
@@ -108,6 +111,14 @@
 				92D50AD42C515D6C009258C7 /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		92D50AD62C5183BA009258C7 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				92D50AD72C5183D2009258C7 /* BoardViewController.swift */,
+			);
+			path = Board;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				92A122842C515869004D760F /* AppDelegate.swift in Sources */,
 				92D50AD22C515B97009258C7 /* LoginView.swift in Sources */,
 				92A122862C515869004D760F /* SceneDelegate.swift in Sources */,
+				92D50AD82C5183D2009258C7 /* BoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
