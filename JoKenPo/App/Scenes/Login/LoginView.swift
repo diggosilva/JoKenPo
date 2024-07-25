@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginViewDelegate: AnyObject {
     func textFieldDidChange()
+    func buttonTapped()
 }
 
 class LoginView: UIView {
@@ -25,6 +26,8 @@ class LoginView: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.attributedPlaceholder = NSAttributedString(string: "Digite seu nome...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         tf.clearButtonMode = .whileEditing
+        tf.autocorrectionType = .no
+        tf.autocapitalizationType = .words
         tf.textColor = .black
         tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
@@ -64,11 +67,7 @@ class LoginView: UIView {
     }
     
     @objc private func buttonTapped() {
-        guard let username = nameTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines), !username.isEmpty else {
-            return
-        }
-        // TODO Avançar pra próxima tela passando o nome do usuário
-        print("DEBUG: Login com o nome de usuário:", username)
+        delegate?.buttonTapped()
     }
     
     private func setupView() {

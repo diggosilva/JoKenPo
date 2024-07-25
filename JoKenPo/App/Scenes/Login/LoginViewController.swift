@@ -92,4 +92,29 @@ extension LoginViewController: LoginViewDelegate {
             }
         }
     }
+    
+    func buttonTapped() {
+        guard let username = self.loginView.nameTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines), !username.isEmpty else {
+            return
+        }
+
+        let boardVC = BoardViewController()
+        boardVC.title = "Olá, \(username)!"
+        
+        if let navigationController = self.navigationController {
+            navigationController.pushViewController(boardVC, animated: false)
+            UIView.transition(with: navigationController.view,
+                              duration: 0.5,
+                              options: .transitionFlipFromRight,
+                              animations: nil,
+                              completion: nil)
+        } else {
+            self.present(boardVC, animated: false, completion: nil)
+            UIView.transition(with: self.view,
+                              duration: 0.5,
+                              options: .transitionFlipFromRight,
+                              animations: nil,
+                              completion: nil)
+        }
+    }
 }
