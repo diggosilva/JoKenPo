@@ -9,6 +9,13 @@ import UIKit
 
 class BoardViewController: UIViewController {
     
+    private let boardView = BoardView()
+    
+    override func loadView() {
+        super.loadView()
+        view = boardView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
