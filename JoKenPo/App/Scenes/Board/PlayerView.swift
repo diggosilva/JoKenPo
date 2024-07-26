@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol PlayerViewDelegate: AnyObject {
+    func rockButtonTapped()
+    func paperButtonTapped()
+    func scissorButtonTapped()
+}
+
 class PlayerView: UIView {
     lazy var bgPlayer: UIView = {
         let view = UIView()
@@ -27,6 +33,7 @@ class PlayerView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✊🏻", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 80)
+        button.addTarget(self, action: #selector(rockButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -35,6 +42,7 @@ class PlayerView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✋🏻", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 80)
+        button.addTarget(self, action: #selector(paperButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -43,6 +51,7 @@ class PlayerView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✌🏻", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 80)
+        button.addTarget(self, action: #selector(scissorButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -58,6 +67,8 @@ class PlayerView: UIView {
         return stack
     }()
     
+    weak var delegate: PlayerViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
@@ -65,6 +76,18 @@ class PlayerView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func rockButtonTapped() {
+        delegate?.rockButtonTapped()
+    }
+    
+    @objc private func paperButtonTapped() {
+        delegate?.paperButtonTapped()
+    }
+    
+    @objc private func scissorButtonTapped() {
+        delegate?.scissorButtonTapped()
     }
     
     private func setupView() {

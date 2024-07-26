@@ -70,7 +70,7 @@ class ScoreView: UIView {
     lazy var valueVictoryLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "99"
+        label.text = "0"
         label.textColor = .black
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .subheadline)
@@ -80,7 +80,7 @@ class ScoreView: UIView {
     lazy var valueDrawLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "99"
+        label.text = "0"
         label.textColor = .black
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .subheadline)
@@ -90,7 +90,7 @@ class ScoreView: UIView {
     lazy var valueLoseLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "99"
+        label.text = "0"
         label.textColor = .black
         label.textAlignment = .center
         label.font = .preferredFont(forTextStyle: .subheadline)

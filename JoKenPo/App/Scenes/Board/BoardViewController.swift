@@ -9,7 +9,7 @@ import UIKit
 
 class BoardViewController: UIViewController {
     
-    private let boardView = BoardView()
+    let boardView = BoardView()
     
     override func loadView() {
         super.loadView()
@@ -24,6 +24,5 @@ class BoardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.setHidesBackButton(true, animated: true)
-    }
-    
+    }    
 }
