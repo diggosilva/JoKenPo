@@ -34,14 +34,37 @@ class BoardViewController: UIViewController {
 extension BoardViewController: PlayerViewDelegate {
     func rockButtonTapped() {
         boardView.resultView.yourButton.setTitle("✊🏻", for: .normal)
+        checkMove()
     }
     
     func paperButtonTapped() {
-        let resultView = ResultView()
         boardView.resultView.yourButton.setTitle("✋🏻", for: .normal)
+        checkMove()
     }
     
     func scissorButtonTapped() {
         boardView.resultView.yourButton.setTitle("✌🏻", for: .normal)
+        checkMove()
+    }
+    
+    func checkMove() {
+        // Victory
+        
+        if boardView.resultView.yourButton.currentTitle == "✊🏻" && boardView.resultView.computerButton.currentTitle == "✌🏻" ||
+            boardView.resultView.yourButton.currentTitle == "✌🏻" && boardView.resultView.computerButton.currentTitle == "✋🏻" ||
+            boardView.resultView.yourButton.currentTitle == "✋🏻" && boardView.resultView.computerButton.currentTitle == "✊🏻" {
+            
+            print("DEBUG: Você ganhou!")
+            
+            // Draw
+        } else if boardView.resultView.yourButton.currentTitle == "✊🏻" && boardView.resultView.computerButton.currentTitle == "✊🏻" ||
+                    boardView.resultView.yourButton.currentTitle == "✌🏻" && boardView.resultView.computerButton.currentTitle == "✌🏻" ||
+                    boardView.resultView.yourButton.currentTitle == "✋🏻" && boardView.resultView.computerButton.currentTitle == "✋🏻" {
+                    
+                    print("DEBUG: Empate!")
+        } else {
+            
+            print("DEBUG: Você perdeu!")
+        }
     }
 }
