@@ -34,19 +34,14 @@ class BoardViewController: UIViewController {
 extension BoardViewController: PlayerViewDelegate {
     func rockButtonTapped() {
         boardView.resultView.yourButton.setTitle("✊🏻", for: .normal)
-        print("DEBUG: Escolheu PEDRA")
     }
     
     func paperButtonTapped() {
         let resultView = ResultView()
         boardView.resultView.yourButton.setTitle("✋🏻", for: .normal)
-        print("DEBUG: Escolheu PAPEL")
     }
     
     func scissorButtonTapped() {
         boardView.resultView.yourButton.setTitle("✌🏻", for: .normal)
-        print("DEBUG: Escolheu TESOURA")
     }
-    
-    
 }
