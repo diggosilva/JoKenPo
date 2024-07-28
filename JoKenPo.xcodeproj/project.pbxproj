@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922FDE6C2C56E0D800495029 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FDE6B2C56E0D800495029 /* BoardViewModel.swift */; };
 		92315E2A2C52CB000023BD11 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92315E292C52CB000023BD11 /* BoardView.swift */; };
 		92315E2C2C52FA8A0023BD11 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92315E2B2C52FA8A0023BD11 /* ScoreView.swift */; };
 		92315E2E2C52FA9B0023BD11 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92315E2D2C52FA9B0023BD11 /* ResultView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		922FDE6B2C56E0D800495029 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		92315E292C52CB000023BD11 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		92315E2B2C52FA8A0023BD11 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		92315E2D2C52FA9B0023BD11 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
@@ -49,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		920ADCAD2C54462900A39EE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				92315E2B2C52FA8A0023BD11 /* ScoreView.swift */,
+				92315E2D2C52FA9B0023BD11 /* ResultView.swift */,
+				92315E2F2C52FAA80023BD11 /* PlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		92A122772C515869004D760F = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +138,8 @@
 			children = (
 				92D50AD72C5183D2009258C7 /* BoardViewController.swift */,
 				92315E292C52CB000023BD11 /* BoardView.swift */,
-				92315E2B2C52FA8A0023BD11 /* ScoreView.swift */,
-				92315E2D2C52FA9B0023BD11 /* ResultView.swift */,
-				92315E2F2C52FAA80023BD11 /* PlayerView.swift */,
+				922FDE6B2C56E0D800495029 /* BoardViewModel.swift */,
+				920ADCAD2C54462900A39EE0 /* Views */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 				92A122882C515869004D760F /* LoginViewController.swift in Sources */,
 				92A122842C515869004D760F /* AppDelegate.swift in Sources */,
 				92D50AD22C515B97009258C7 /* LoginView.swift in Sources */,
+				922FDE6C2C56E0D800495029 /* BoardViewModel.swift in Sources */,
 				92A122862C515869004D760F /* SceneDelegate.swift in Sources */,
 				92D50AD82C5183D2009258C7 /* BoardViewController.swift in Sources */,
 			);
