@@ -97,9 +97,13 @@ extension LoginViewController: LoginViewDelegate {
         guard let username = self.loginView.nameTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines), !username.isEmpty else {
             return
         }
+        
+        let nameComponents = username.components(separatedBy: .whitespaces)
+        let firstName = nameComponents.first
 
         let boardVC = BoardViewController()
         boardVC.title = "Olá, \(username)!"
+        boardVC.boardView.resultView.yourLabel.text = firstName
         
         if let navigationController = self.navigationController {
             navigationController.pushViewController(boardVC, animated: false)
