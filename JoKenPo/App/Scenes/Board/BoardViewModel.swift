@@ -20,17 +20,27 @@ class BoardViewModel {
         case lose
     }
     
+    func computerMove() -> Move {
+        let randomNumber = Int.random(in: 0...2)
+        
+        switch randomNumber {
+        case 0:
+            return .rock
+        case 1:
+            return .paper
+        default:
+            return .scissors
+        }
+    }
+    
     func checkMove(userMove: Move, computerMove: Move) -> GameResult {
         if userMove == .rock && computerMove == .scissors ||
             userMove == .scissors && computerMove == .paper ||
             userMove == .paper && computerMove == .rock {
-            print("DEBUG: VITORIA")
             return .win
         } else if userMove == computerMove {
-            print("DEBUG: EMPATE")
             return.draw
         } else {
-            print("DEBUG: DERROTA")
             return .lose
         }
     }

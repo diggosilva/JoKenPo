@@ -34,19 +34,49 @@ class BoardViewController: UIViewController {
 
 extension BoardViewController: PlayerViewDelegate {
     func rockButtonTapped() {
-        boardView.resultView.yourButton.setTitle("✊🏻", for: .normal)
-//        checkMove()
+        userMove(userMove: "✊🏻")
     }
     
     func paperButtonTapped() {
-        boardView.resultView.yourButton.setTitle("✋🏻", for: .normal)
-//        checkMove()
+        userMove(userMove: "✋🏻")
     }
     
     func scissorButtonTapped() {
-        boardView.resultView.yourButton.setTitle("✌🏻", for: .normal)
-//        checkMove()
+        userMove(userMove: "✌🏻")
     }
-
-
+    
+    func userMove(userMove: String) {
+        UIView.transition(with: self.boardView.resultView.yourButton, duration: 0.25, options: .transitionFlipFromRight) {
+            self.boardView.resultView.yourButton.setTitle(userMove, for: .normal)
+            self.checkComputerMove()
+            self.checkUserMove()
+        }
+    }
+    
+    func checkComputerMove() {
+        UIView.transition(with: self.boardView.resultView.computerButton, duration: 0.25, options: .transitionFlipFromRight) {
+            let computerMove = self.viewModel.computerMove()
+            self.boardView.resultView.computerButton.setTitle(computerMove.rawValue, for: .normal)
+        }
+    }
+    
+    func checkUserMove() {
+        guard let userMoveTitle = boardView.resultView.yourButton.currentTitle,
+              let computerMoveTitle = boardView.resultView.computerButton.currentTitle,
+              let userMove = BoardViewModel.Move(rawValue: userMoveTitle),
+              let computerMove = BoardViewModel.Move(rawValue: computerMoveTitle) else {
+            return
+        }
+        
+        let result = viewModel.checkMove(userMove: userMove, computerMove: computerMove)
+        
+        switch result {
+        case .win:
+            print("DEBUG: Venceu")
+        case .draw:
+            print("DEBUG: Empatou")
+        case .lose:
+            print("DEBUG: Perdeu")
+        }
+    }
 }
