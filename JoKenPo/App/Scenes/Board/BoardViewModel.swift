@@ -8,6 +8,10 @@
 import Foundation
 
 class BoardViewModel {
+    var victory = 0
+    var draw = 0
+    var lose = 0
+    
     enum Move: String {
         case rock = "✊🏻"
         case paper = "✋🏻"
@@ -37,10 +41,13 @@ class BoardViewModel {
         if userMove == .rock && computerMove == .scissors ||
             userMove == .scissors && computerMove == .paper ||
             userMove == .paper && computerMove == .rock {
+            victory += 1
             return .win
         } else if userMove == computerMove {
+            draw += 1
             return.draw
         } else {
+            lose += 1
             return .lose
         }
     }
