@@ -74,16 +74,10 @@ extension BoardViewController: PlayerViewDelegate {
         switch result {
         case .win:
             updateScoreLabel(boardView.scoreView.valueVictoryLabel, with: viewModel.victory)
-//            self.boardView.scoreView.valueVictoryLabel.text = String(self.viewModel.victory)
-            print("DEBUG: Venceu")
         case .draw:
             updateScoreLabel(boardView.scoreView.valueDrawLabel, with: viewModel.draw)
-//            self.boardView.scoreView.valueDrawLabel.text = String(self.viewModel.draw)
-            print("DEBUG: Empatou")
         case .lose:
             updateScoreLabel(boardView.scoreView.valueLoseLabel, with: viewModel.lose)
-//            self.boardView.scoreView.valueLoseLabel.text = String(self.viewModel.lose)
-            print("DEBUG: Perdeu")
         }
     }
     
