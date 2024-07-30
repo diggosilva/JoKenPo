@@ -38,9 +38,9 @@ class BoardView: UIView {
         return stack
     }()
     
-    var victory = 0
-    var draw = 0
-    var lose = 0
+//    var victory = 0
+//    var draw = 0
+//    var lose = 0
     
     override init(frame: CGRect) {
         super.init(frame: .zero)

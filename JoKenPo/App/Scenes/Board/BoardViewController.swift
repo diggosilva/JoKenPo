@@ -46,7 +46,7 @@ extension BoardViewController: PlayerViewDelegate {
     }
     
     func userMove(userMove: String) {
-        UIView.transition(with: self.boardView.resultView.yourButton, duration: 0.25, options: .transitionFlipFromRight) {
+        UIView.transition(with: self.boardView.resultView.yourButton, duration: 0.3, options: .transitionFlipFromLeft) {
             self.boardView.resultView.yourButton.setTitle(userMove, for: .normal)
             self.checkComputerMove()
             self.checkUserMove()
@@ -54,7 +54,7 @@ extension BoardViewController: PlayerViewDelegate {
     }
     
     func checkComputerMove() {
-        UIView.transition(with: self.boardView.resultView.computerButton, duration: 0.25, options: .transitionFlipFromRight) {
+        UIView.transition(with: self.boardView.resultView.computerButton, duration: 0.3, options: .transitionFlipFromRight) {
             let computerMove = self.viewModel.computerMove()
             self.boardView.resultView.computerButton.setTitle(computerMove.rawValue, for: .normal)
         }
@@ -72,14 +72,32 @@ extension BoardViewController: PlayerViewDelegate {
         
         switch result {
         case .win:
-            self.boardView.scoreView.valueVictoryLabel.text = String(self.viewModel.victory)
+            updateScoreLabel(boardView.scoreView.valueVictoryLabel, with: viewModel.victory)
+//            self.boardView.scoreView.valueVictoryLabel.text = String(self.viewModel.victory)
             print("DEBUG: Venceu")
         case .draw:
-            self.boardView.scoreView.valueDrawLabel.text = String(self.viewModel.draw)
+            updateScoreLabel(boardView.scoreView.valueDrawLabel, with: viewModel.draw)
+//            self.boardView.scoreView.valueDrawLabel.text = String(self.viewModel.draw)
             print("DEBUG: Empatou")
         case .lose:
-            self.boardView.scoreView.valueLoseLabel.text = String(self.viewModel.lose)
+            updateScoreLabel(boardView.scoreView.valueLoseLabel, with: viewModel.lose)
+//            self.boardView.scoreView.valueLoseLabel.text = String(self.viewModel.lose)
             print("DEBUG: Perdeu")
         }
+    }
+    
+    private func updateScoreLabel(_ label: UILabel, with value: Int) {
+        label.text = String(value)
+        
+        UIView.animate(
+            withDuration: 0.15,
+            animations: {
+                label.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.15) {
+                    label.transform = CGAffineTransform.identity
+                }
+            })
     }
 }

@@ -45,7 +45,7 @@ class BoardViewModel {
             return .win
         } else if userMove == computerMove {
             draw += 1
-            return.draw
+            return .draw
         } else {
             lose += 1
             return .lose
