@@ -45,7 +45,7 @@ extension BoardViewController: PlayerViewDelegate {
         userMove(userMove: "✌🏻")
     }
     
-    func userMove(userMove: String) {
+    private func userMove(userMove: String) {
         UIView.transition(with: self.boardView.resultView.yourButton, duration: 0.3, options: .transitionFlipFromLeft) {
             self.boardView.resultView.yourButton.setTitle(userMove, for: .normal)
             self.checkComputerMove()
@@ -53,14 +53,14 @@ extension BoardViewController: PlayerViewDelegate {
         }
     }
     
-    func checkComputerMove() {
+    private func checkComputerMove() {
         UIView.transition(with: self.boardView.resultView.computerButton, duration: 0.3, options: .transitionFlipFromRight) {
             let computerMove = self.viewModel.computerMove()
             self.boardView.resultView.computerButton.setTitle(computerMove.rawValue, for: .normal)
         }
     }
     
-    func checkUserMove() {
+    private func checkUserMove() {
         guard let userMoveTitle = boardView.resultView.yourButton.currentTitle,
               let computerMoveTitle = boardView.resultView.computerButton.currentTitle,
               let userMove = BoardViewModel.Move(rawValue: userMoveTitle),

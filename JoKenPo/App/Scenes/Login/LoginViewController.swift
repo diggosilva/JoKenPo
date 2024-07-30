@@ -56,7 +56,7 @@ extension LoginViewController: UITextFieldDelegate {
         }
     }
     
-    func highlightTextField(textField: UITextField, isSelected: Bool) {
+    private func highlightTextField(textField: UITextField, isSelected: Bool) {
         if isSelected == true {
             UIView.animate(withDuration: 0.25) {
                 textField.layer.shadowOffset = CGSize(width: 5, height: 5)

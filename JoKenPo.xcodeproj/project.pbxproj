@@ -110,8 +110,8 @@
 		92D50ACF2C515B77009258C7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				92D50AD62C5183BA009258C7 /* Board */,
 				92D50AD02C515B81009258C7 /* Login */,
+				92D50AD62C5183BA009258C7 /* Board */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
