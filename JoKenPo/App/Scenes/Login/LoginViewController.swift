@@ -103,7 +103,7 @@ extension LoginViewController: LoginViewDelegate {
 
         let boardVC = BoardViewController()
         boardVC.title = "Olá, \(username)!"
-        boardVC.boardView.resultView.yourLabel.text = firstName
+        boardVC.boardView.resultView.userLabel.text = firstName
         
         if let navigationController = self.navigationController {
             navigationController.pushViewController(boardVC, animated: false)

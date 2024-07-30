@@ -47,8 +47,8 @@ extension BoardViewController: PlayerViewDelegate {
     
     private func userMove(userMove: String) {
         haptics()
-        UIView.transition(with: self.boardView.resultView.yourButton, duration: 0.3, options: .transitionFlipFromLeft) {
-            self.boardView.resultView.yourButton.setTitle(userMove, for: .normal)
+        UIView.transition(with: self.boardView.resultView.userButton, duration: 0.3, options: .transitionFlipFromLeft) {
+            self.boardView.resultView.userButton.setTitle(userMove, for: .normal)
             self.checkComputerMove()
             self.checkUserMove()
         }
@@ -62,7 +62,7 @@ extension BoardViewController: PlayerViewDelegate {
     }
     
     private func checkUserMove() {
-        guard let userMoveTitle = boardView.resultView.yourButton.currentTitle,
+        guard let userMoveTitle = boardView.resultView.userButton.currentTitle,
               let computerMoveTitle = boardView.resultView.computerButton.currentTitle,
               let userMove = BoardViewModel.Move(rawValue: userMoveTitle),
               let computerMove = BoardViewModel.Move(rawValue: computerMoveTitle) else {

@@ -22,7 +22,7 @@ class ResultView: UIView {
         return view
     }()
     
-    lazy var yourButton: UIButton = {
+    lazy var userButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✊🏻", for: .normal)
@@ -41,7 +41,7 @@ class ResultView: UIView {
     }()
     
     lazy var buttonHStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [yourButton, computerButton])
+        let stack = UIStackView(arrangedSubviews: [userButton, computerButton])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.distribution = .fillEqually
@@ -49,7 +49,7 @@ class ResultView: UIView {
         return stack
     }()
     
-    lazy var yourLabel: UILabel = {
+    lazy var userLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Você"
@@ -74,7 +74,7 @@ class ResultView: UIView {
     }()
     
     lazy var labelHStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [yourLabel, computerLabel])
+        let stack = UIStackView(arrangedSubviews: [userLabel, computerLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.distribution = .fillEqually
