@@ -46,6 +46,7 @@ extension BoardViewController: PlayerViewDelegate {
     }
     
     private func userMove(userMove: String) {
+        haptics()
         UIView.transition(with: self.boardView.resultView.yourButton, duration: 0.3, options: .transitionFlipFromLeft) {
             self.boardView.resultView.yourButton.setTitle(userMove, for: .normal)
             self.checkComputerMove()

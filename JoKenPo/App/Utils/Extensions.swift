@@ -12,3 +12,10 @@ extension UIView {
         views.forEach({ addSubview($0) })
     }
 }
+
+func haptics() {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.success)
+    let generator2 = UIImpactFeedbackGenerator(style: .medium)
+    generator2.impactOccurred()
+}
