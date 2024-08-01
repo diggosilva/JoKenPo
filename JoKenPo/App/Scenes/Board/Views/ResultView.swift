@@ -53,7 +53,7 @@ class ResultView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Você"
-        label.textColor = .black
+        label.textColor = .systemGreen
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.6
         label.textAlignment = .center
