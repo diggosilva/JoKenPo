@@ -73,15 +73,15 @@ extension BoardViewController: PlayerViewDelegate {
         
         switch result {
         case .win:
-            updateScoreLabel(boardView.scoreView.valueVictoryLabel, with: viewModel.victory)
+            animateScoreValue(boardView.scoreView.valueVictoryLabel, with: viewModel.victory)
         case .draw:
-            updateScoreLabel(boardView.scoreView.valueDrawLabel, with: viewModel.draw)
+            animateScoreValue(boardView.scoreView.valueDrawLabel, with: viewModel.draw)
         case .lose:
-            updateScoreLabel(boardView.scoreView.valueLoseLabel, with: viewModel.lose)
+            animateScoreValue(boardView.scoreView.valueLoseLabel, with: viewModel.lose)
         }
     }
     
-    private func updateScoreLabel(_ label: UILabel, with value: Int) {
+    private func animateScoreValue(_ label: UILabel, with value: Int) {
         label.text = String(value)
         
         UIView.animate(

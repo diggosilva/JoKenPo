@@ -73,7 +73,7 @@ class ScoreView: UIView {
         label.text = "0"
         label.textColor = .black
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = .preferredFont(forTextStyle: .headline)
         return label
     }()
     
@@ -83,7 +83,7 @@ class ScoreView: UIView {
         label.text = "0"
         label.textColor = .black
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = .preferredFont(forTextStyle: .headline)
         return label
     }()
     
@@ -93,7 +93,7 @@ class ScoreView: UIView {
         label.text = "0"
         label.textColor = .black
         label.textAlignment = .center
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = .preferredFont(forTextStyle: .headline)
         return label
     }()
     
