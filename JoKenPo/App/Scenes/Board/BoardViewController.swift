@@ -74,10 +74,12 @@ extension BoardViewController: PlayerViewDelegate {
         switch result {
         case .win:
             animateScoreValue(boardView.scoreView.valueVictoryLabel, with: viewModel.victory)
+            animateWinnignButtons(button: boardView.resultView.userButton)
         case .draw:
             animateScoreValue(boardView.scoreView.valueDrawLabel, with: viewModel.draw)
         case .lose:
             animateScoreValue(boardView.scoreView.valueLoseLabel, with: viewModel.lose)
+            animateWinnignButtons(button: boardView.resultView.computerButton)
         }
     }
     
@@ -94,5 +96,15 @@ extension BoardViewController: PlayerViewDelegate {
                     label.transform = CGAffineTransform.identity
                 }
             })
+    }
+    
+    private func animateWinnignButtons(button: UIButton) {
+        UIView.animate(withDuration: 0.3) {
+            button.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.3) {
+                button.transform = CGAffineTransform.identity
+            }
+        }
     }
 }
