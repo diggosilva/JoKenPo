@@ -73,7 +73,7 @@ extension BoardViewController: PlayerViewDelegate {
         
         switch result {
         case .win:
-            animateScoreValue(boardView.scoreView.valueVictoryLabel, with: viewModel.victory)
+            animateScoreValue(boardView.scoreView.valueVictoryLabel, with: viewModel.win)
             animateWinnignButtons(button: boardView.resultView.userButton)
         case .draw:
             animateScoreValue(boardView.scoreView.valueDrawLabel, with: viewModel.draw)

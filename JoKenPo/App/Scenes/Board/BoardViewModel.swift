@@ -8,7 +8,7 @@
 import Foundation
 
 class BoardViewModel {
-    var victory = 0
+    var win = 0
     var draw = 0
     var lose = 0
     
@@ -41,7 +41,7 @@ class BoardViewModel {
         if userMove == .rock && computerMove == .scissors ||
             userMove == .scissors && computerMove == .paper ||
             userMove == .paper && computerMove == .rock {
-            victory += 1
+            win += 1
             return .win
         } else if userMove == computerMove {
             draw += 1
