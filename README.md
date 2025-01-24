@@ -11,12 +11,13 @@
 
 An iOS application written in Swift, Jokenpo game or Rock Paper Scissors.
 
-<p align="left">
-    <img src="https://media.giphy.com/media/t3yymuKh97nWMtwCLx/giphy.gif" width="300" max-width="40%" alt="Github"/>
-</p> 
+| Demo | Main | Print |
+| --- | --- | --- |
+| ![Demo](https://github.com/user-attachments/assets/8d2d87a5-91e5-4114-8627-73e25ba095b5) | ![Main](https://github.com/user-attachments/assets/6a4917b3-7fe9-44ad-9949-6c17c6b05d1e) | ![Print](https://github.com/user-attachments/assets/6e5eff96-1363-46b7-aff5-86942aefc802) |
 
 ## Contents
 
+- [Features](#features)
 - [Requirements](#requirements)
 - [Functionalities](#functionalities)
 - [Setup](#setup)
@@ -43,7 +44,7 @@ An iOS application written in Swift, Jokenpo game or Rock Paper Scissors.
 
 ## Setup
 
-First of all download and install Xcode, Cocoapods and then clone the repository:
+First of all download and install Xcode and then clone the repository:
 
 ```sh
 $ git@github.com:diggosilva/JoKenPo.git
@@ -53,12 +54,8 @@ After cloning, do the following:
 
 ```sh
 $ cd <diretorio-base>/JoKenPo/
-$ open JoKenPo.xcworkspace/
+$ open JoKenPo.xcodeproj/
 ```
-
-## Built With
-
-* [SDWebImage](https://github.com/SDWebImage/SDWebImage) - Asynchronous image downloader with cache support as a UIImageView category
 
 ## Credits
 
